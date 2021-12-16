@@ -1,0 +1,69 @@
+\section{Introduction}
+\label{sec:intro}
+
+
+\subsection{Background}
+House values in the United States are constantly shifting due to outside political and economic factors that the public does not have control of. Being able to predict house values in this ever changing market is important for home buyers across the country who are looking for the best price on a home. Having a complete understanding of the variables that affect house value will aid home buyers in assessing what their needs and wants are during this process.
+
+
+\subsection{Data}
+The data utilized is extracted from the IPUMS USA database from a survey conducted in 2019 by Integrated Public Use Microdata Series. IPUMS USA is a website and database that provides access to samples of the American population from sixteen different federal censuses, the American Community Surveys of 2000 to the present and from the Puerto Rican Community Surveys from 2005 to the present.\cite{IPUMS} A random sample of 100,000 units were selected from the original data for the analysis. Of the 17 predictor variables examined in the original data, 5 were used in the regression analysis and model building to predict the response variable of house value; all of which are described below. The other 12 that were omitted were either not of interest in predicting house value or did not have measurable values for the purposes of this study. 
+
+
+
+\subsection{Variables}
+\indent \textbf{State} which is described by the name "STATEFIP", reports the state in which the house was located in alphabetical order. This geographic variable includes all states and the District of Columbia as well as groupings of states which totals to 62 possible values for this explanatory variable in the original data set.\cite{IPUMS} The variables used in the random sample study only included 51 categorical variables which consisted of all the states and the District of Columbia which were represented by the various state abbreviations.
+
+
+\indent \textbf{Metropolitan status} which is described by the name "METRO", indicates whether the household resided within a metropolitan area and, households in metropolitan areas, whether the household resided within or outside of a central city. This geographic variable includes 5 possible values in the original data set.\cite{IPUMS} For the study, 4 of those categorical variables were used as there were no values of "Metropolitan status indeterminable" within the 100,000 units.
+
+
+\indent \textbf{Annual property taxes} which is described by the name "PROPTX99", reports the household's total real estate tax costs for the previous year. The total tax includes state, local, and any other taxes. Respondents reported the full amount of taxes including mortgage payments, delinquent payments, and if they were paid by another party. This economic variable includes 70 values, all of which are represented by an interval of property tax ranging from $50.00$ to $1000.00$ intervals in the original data set.\cite{IPUMS} With the intention of creating a simpler model, the 70 variables were condensed into 11 categorical variables represented by the median of a $1,000.00$ interval; $500.00$, $1,500.00$, $2,500.00$ e.t.c.. We renamed this variable "LNPROPTX" after taking the natural log of the property tax value to reduce variability.
+
+
+\indent \textbf{Age of structure} which is described by the name "BUILTYR2", reports the decade in which the structure was built. This dwelling characteristic variable has 24 values which range from homes being built in 1939 or before to being built in 2019 in the original data set. For this study, all 100,000 randomly selected homes were built in 2005 or after which creates 14 quantitative variables.\cite{IPUMS} It was not necessary to study houses built before 2005 as the population of interest is only in recently built homes. Making the "BUILTYR" variable quantitative will give a simpler model. The years after 2005 were represented by values of 10 through 24. These values were re-coded into years 2005 to 2019.
+
+
+\indent \textbf{Number of bedrooms} which is described by the name "BEDROOMS", reports the number of bedrooms within the housing unit. This dwelling characteristic variable has 22 possible values with x-1 being the number of bedrooms represented by each value (x) in the original data set. The data in this study did not include any units with greater than 8 bedrooms so there are 9 categorical variables for bedroom.\cite{IPUMS} The variable values for bedrooms were all transformed into x-1 values to make this a quantitative representation of the number of bedrooms.
+
+
+\indent \textbf{House value} which is described by the name "VALUEH", reports the value of the housing units in contemporary dollars. This value was collected based on the home owners opinion of the value of their home at the time of the survey. House value is a continuous variable from houses built in 2008 and on. There are 65 possible values in the original data set that are represented by intervals in which a homeowners property tax would be included in.\cite{IPUMS} For this study, the categorical intervals were reverted into quantitative values that the owners originally priced their homes at. The variable was renamed "LNVALUE" after the natural log was taken to reduce variability. This will allow for analysis to become simpler when testing variables that may have a significant effect on house value.
+
+
+\subsection{Exploratory Data Analysis}
+
+Fig. \ref{figure:state_counts} shows an overview of the house count in each state from the simple random sample (SRS) of 100,000 data entries.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=3.5in]{./fig/State_Counts.PNG}
+	\caption{Count of Houses per State}
+	\label{figure:state_counts}
+\end{figure}
+
+Fig. \ref{figure:year_counts} shows a plot of the count of houses built by year from the SRS.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=3.5in]{./fig/Year_Counts.PNG}
+	\caption{Count of Houses Built by Year}
+	\label{figure:year_counts}
+\end{figure}
+
+Fig. \ref{figure:PROPTX_Comparison} shows a plot comparing the distribution of average property tax in each state with the log distribution of average property tax in each state from the SRS.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=3.5in]{./fig/PROPTX_Comparison.PNG}
+	\caption{PROPTX vs. LNPROPTX}
+	\label{figure:PROPTX_Comparison}
+\end{figure}
+
+Fig \ref{figure:VALUE_Comparison} shows a plot comparing the distribution of average home values in each state with the log distribution of average home values in each state from the SRS.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=3.5in]{./fig/VALUE_Comparison.PNG}
+	\caption{VALUE vs. LNVALUE}
+	\label{figure:VALUE_Comparison}
+\end{figure}

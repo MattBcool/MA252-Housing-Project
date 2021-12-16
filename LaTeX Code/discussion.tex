@@ -1,0 +1,20 @@
+\section{Discussion}
+\label{sec:disc}
+
+\subsection{Significant Variables}
+Of the 8 predictor variables utilized in the model, age of structure, state (Texas), number of bedrooms, and log of property tax were the most significant predictors of home value in the model with each variable mentioned below having a p-value of less than 0.0001. All intercepts are in terms of predicted log house values. To convert these log coefficients to U.S. dollar amounts, use this equation. \[ USD=10^x \] where x is a log coefficient.
+
+Age of structure had an intercept value of 0.009527. As the age of structure becomes newer by 1 year, the average predicted log home value increases by 0.009527 holding all other variables constant.
+
+The state of Texas had an intercept value of -0.851144. The average predicted log home value for a house in Texas is 0.851144 less than a house in Pennsylvania holding all other variables constant.
+
+Number of bedrooms had an intercept value of 0.135463. For every 1 bedroom increase, the average predicted log home value increases by 0.135463 holding all other variables constant.
+
+Log of property tax had an intercept of 0.560288. For each 1 unit increase in log of property tax, the average predicted log home value increases by 0.560288 holding all other variables constant.
+
+The coefficients for the significant predictor variables are located are located in a GitHub file due to spacing conflicts with this report. View References section for the link.\cite{github}.
+
+\subsection{Limitations}
+A few of the variables were challenging to represent originally which made the model more complex and confusing to interpret. One of these variables, age of structure had to be made into a quantitative variable in order to obtain the assumption plots within a reasonable amount of processing time in SAS. This limits our ability to interpret the effect on house price that each year has individually and our ability to compare years with our intended year of interest of 2019. With this variable, extrapolation is very dangerous for years outside of the range 2005 to 2019 as there are confounding variables that could affect home value such as economic prosperity, inflation rates, and general value of the U.S. dollar.
+
+It is also important to mention that the years of 2008 and 2009 could include multiple outliers because these observations were collected directly following the Great Recession in late 2007 from the housing market crash. We expect these housing values to be extremely lower compared to 2005, 2006, and 2007 which would make the predicted model hard to use during the years in which the country was recovering from the market crash. More research should be completed to find if variables such as employment status of owners or mortgage value are more significant for predicting home value during this recession.

@@ -1,0 +1,91 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{enumerate}
+\usepackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=2pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=2pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=2pt}
+
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{multirow}
+%\usepackage[table]{xcolor}	%for color of table cell
+\usepackage{diagbox}		%for head of table
+
+%\usepackage[tight,footnotesize]{subfigure}
+
+\usepackage{listings}
+\usepackage{color}
+
+%\usepackage{caption}
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithm}
+\algnewcommand{\LineComment}[1]{\State \(\triangleright\) #1}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multirow}
+%\usepackage[amsmath,thmmarks]{ntheorem}
+
+\usepackage{empheq}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\definecolor{hellmagenta}{rgb}{1,0.75,0.9}		%for color of equations
+\definecolor{hellcyan}{rgb}{0.75,1,0.9}
+\definecolor{hellgelb}{rgb}{1,1,0.8}
+\definecolor{colKeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{0,0,0}
+\definecolor{colComments}{rgb}{1,0,0}
+\definecolor{colString}{rgb}{0,0.5,0}
+\definecolor{darkyellow}{rgb}{1,0.9,0}
+
+\usepackage{amssymb}
+\usepackage{stfloats}
+%\usepackage[square, comma, sort&compress, numbers]{natbib}
+\usepackage{mathrsfs}
+\usepackage{subfigure}
+
+\usepackage{lipsum}
+\usepackage{lmodern}
+\usepackage{tcolorbox}
+\usepackage[linewidth=1pt]{mdframed}
+
+%\usepackage[colorlinks,
+%            linkcolor=red,
+%            anchorcolor=blue,
+%            citecolor=green]{hyperref}
+
+%\usepackage[citecolor=black]{hyperref}
+\usepackage{url}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{booktabs} % For formal tables
+\usepackage{textcomp}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+		T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{A Statistical Analysis on Recent Housing Data}
+
+\author{
+    \IEEEauthorblockN{Matthew Grohotolski, Alexander Waskiewicz}
+    \IEEEauthorblockA{Elizabethtown College
+    \\\{$GrohotolskiM$, $WaskiewiczA$\}@etown.edu}
+}
+
+
+\maketitle
+
+\input{abstract}
+
+\input{intro}
+\input{methods}
+\input{results}
+\input{discussion}
+
+\bibliographystyle{IEEEtran.bst}
+\bibliography{refs}
+
+\end{document}
