@@ -7,6 +7,6 @@ The project goals are as follows:
 * Reorganize raw data into proper categorical classes and quantitative variables
 * Conduct Exploratory Data Analysis (EDA)
 * Run Multiple Linear Regresssion (MLR) to obtain normal and interaction variable coefficients
-* Analize Pred
+* Analyze final model graphs and interpret the results
 
 The paper is coded in LaTeX, the final version of the paper is located at 'Project Paper.pdf'.
